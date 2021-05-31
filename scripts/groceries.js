@@ -3,12 +3,29 @@
 // A set of ingredients should be added to products		 
 
 var products = [
+
 	{
-		name: "Milk",
+		name: "Kraft Dinner",
 		organic: false,
 		lactosefree: false,
+		nutfree: false,
+		price: 1.50,
+	},
+
+	{
+		name: "Organic Bananas",
+		organic: true,
+		lactosefree: true,
 		nutfree: true,
-		price: 6.00,
+		price: 2.00,
+	},
+
+	{
+		name: "Tomatoes",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 2.00,
 	},
 
 	{
@@ -20,11 +37,76 @@ var products = [
 	},
 
 	{
+		name: "Carrots",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 3.00,
+	},
+
+	{
+		name: "Peanut Butter",
+		organic: true,
+		lactosefree: true,
+		nutfree: false,
+		price: 3.50,
+	},
+
+	{
+		name: "Strawberries",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 4.00,
+	},
+
+	{
 		name: "Eggs (Dozen)",
 		organic: false,
 		lactosefree: true,
 		nutfree: true,
 		price: 4.00,
+	},
+
+	{
+		name: "Organic Gummy Bears",
+		organic: true,
+		lactosefree: true,
+		nutfree: true,
+		price: 4.50,
+	},
+
+
+	{
+		name: "Organic Carrots",
+		organic: true,
+		lactosefree: true,
+		nutfree: true,
+		price: 5.00
+	},
+
+	{
+		name: "Swiss Cheese",
+		organic: true,
+		lactosefree: false,
+		nutfree: true,
+		price: 5.50,
+	},
+
+	{
+		name: "Milk",
+		organic: false,
+		lactosefree: false,
+		nutfree: true,
+		price: 6.00,
+	},
+
+	{
+		name: "Oreo Cakesters",
+		organic: false,
+		lactosefree: false,
+		nutfree: true,
+		price: 7.00,
 	},
 
 	{
@@ -43,96 +125,41 @@ var products = [
 		price: 18.00,
 	},
 
-	{
-		name: "Bananas",
-		organic: false,
-		lactosefree: true,
-		nutfree: true,
-		price: 2.00,
-	},
 
-	{
-		name: "Peanut Butter",
-		organic: true,
-		lactosefree: true,
-		nutfree: false,
-		price: 3.50,
-	},
-
-	{
-		name: "Organic Gummy Bears",
-		organic: true,
-		lactosefree: true,
-		nutfree: true,
-		price: 4.50,
-	},
-
-	{
-		name: "Strawberries",
-		organic: false,
-		lactosefree: true,
-		nutfree: true,
-		price: 4.00,
-	},
-
-	{
-		name: "Kraft Dinner",
-		organic: false,
-		lactosefree: false,
-		nutfree: false,
-		price: 1.50,
-	},
-
-	{
-		name: "Oreo Cakesters",
-		organic: false,
-		lactosefree: false,
-		nutfree: true,
-		price: 7.00,
-	},
-
-	{
-		name: "Tomatoes",
-		organic: false,
-		lactosefree: true,
-		nutfree: true,
-		price: 2.00,
-	},
-
-	{
-		name: "Carrots",
-		organic: false,
-		lactosefree: true,
-		nutfree: true,
-		price: 3.00,
-	},
-
-	{
-		name: "Organic Carrots",
-		organic: true,
-		lactosefree: true,
-		nutfree: true,
-		price: 5.00
-	},
 ];
 	
-
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restrictions) {
+function restrictListProducts(restrictions) {
+
 	let product_names = [];
-	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
+	let flag = false;
+	for (let i=0; i<products.length; i++) {
+		for (let j=0; j<restrictions.length; j++){
+			var res  = restrictions[j];
+			console.log(res);
+			if ((res == "Nut Free") && (products[i].nutfree == false)){
+				flag = true;
+			
+			}
+			else if ((res == "Organic") && (products[i].organic == false)){
+				flag = true;
+				
+			}
+			else if ((res == "Lactose Free") && (products[i].lactosefree == false)) {
+				flag = true;
+				
+			}
+			
 		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
+		if(flag){
+			flag = false;
+		}else{
+		product_names.push(products[i]);
 		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
+	
 	}
 	return product_names;
 }
