@@ -16,31 +16,29 @@ function openInfo(evt, tabName) {
 	}
 
 	// Show the current tab, and add an "active" class to the button that opened the tab
-	document.getElementById(tabName).style.display = "block";
+	document.getElementById(tabName)[0].style.display = "block";
 	evt.currentTarget.className += " active";
 
 }
+
+
 
 var bigger = false ;
 function toggleFontSize() {
 	var newtext;
 		if(bigger){
 			newtext = "2vw";
-			document.getElementsByClassName("fontsize")[0].innerHTML = "+BIGGER TEXT+"
-
-
+			document.getElementsByClassName("fontsize")[0].innerHTML = "+ BIGGER TEXT +"
 		}else{
 			newtext = "3vw";
-			document.getElementsByClassName("fontsize")[0].innerHTML = "-smaller text-"
+			document.getElementsByClassName("fontsize")[0].innerHTML = "- smaller text -"
 			
-
 		}
 		alltexts = document.getElementsByClassName("text");
 		for(i = 0; i<alltexts.length; i++ ){
 			alltexts[i].style.fontSize = newtext;
 		}		
 		bigger = !bigger;
-		console.log(bigger);
 	}
 
 		

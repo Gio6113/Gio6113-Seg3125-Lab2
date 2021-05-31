@@ -4,33 +4,116 @@
 
 var products = [
 	{
-		name: "brocoli",
-		vegetarian: true,
-		glutenFree: true,
-		price: 1.99
+		name: "Milk",
+		organic: false,
+		lactosefree: false,
+		nutfree: true,
+		price: 6.00,
 	},
+
 	{
 		name: "bread",
-		vegetarian: true,
-		glutenFree: false,
-
-		price: 2.35
-	},
-	{
-		name: "salmon",
-		vegetarian: false,
-		glutenFree: true,
-		price: 10.00
+		organic: false,
+		lactosefree: true,
+		nutfree: false,
+		price: 2.35,
 	},
 
 	{
-		name: "salmon",
-		vegetarian: false,
-		glutenFree: true,
-		sale: true,
-		original_price: 15.99,
-		price: 10.00
-	}
+		name: "Eggs (Dozen)",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 4.00,
+	},
+
+	{
+		name: "Salmon",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 15.00,
+	},
+
+	{
+		name: "Organic Salmon",
+		organic: true,
+		lactosefree: true,
+		nutfree: true,
+		price: 18.00,
+	},
+
+	{
+		name: "Bananas",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 2.00,
+	},
+
+	{
+		name: "Peanut Butter",
+		organic: true,
+		lactosefree: true,
+		nutfree: false,
+		price: 3.50,
+	},
+
+	{
+		name: "Organic Gummy Bears",
+		organic: true,
+		lactosefree: true,
+		nutfree: true,
+		price: 4.50,
+	},
+
+	{
+		name: "Strawberries",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 4.00,
+	},
+
+	{
+		name: "Kraft Dinner",
+		organic: false,
+		lactosefree: false,
+		nutfree: false,
+		price: 1.50,
+	},
+
+	{
+		name: "Oreo Cakesters",
+		organic: false,
+		lactosefree: false,
+		nutfree: true,
+		price: 7.00,
+	},
+
+	{
+		name: "Tomatoes",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 2.00,
+	},
+
+	{
+		name: "Carrots",
+		organic: false,
+		lactosefree: true,
+		nutfree: true,
+		price: 3.00,
+	},
+
+	{
+		name: "Organic Carrots",
+		organic: true,
+		lactosefree: true,
+		nutfree: true,
+		price: 5.00
+	},
 ];
 	
 
@@ -38,7 +121,7 @@ var products = [
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
+function restrictListProducts(prods, restrictions) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
