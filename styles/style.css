@@ -30,9 +30,10 @@ body {
 
 .allcheckboxes {
   margin-bottom: 10%;
- margin-left: 30%;
+  margin-left: 30%;
   font-family: 'Roboto','Lato','Arial' !important;
   text-align: left !important;
+  font-size: 2.5vw;
 }
 
 /* Style the tab */
@@ -72,10 +73,11 @@ body {
 
 .main-page{
   background-image: url('images/veggies.jpg');
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
-  height: 110%;
+  background-size: 100%;
+  height: 100%;
+  margin-bottom: 5%;
+
 }
 
 
@@ -101,6 +103,7 @@ body {
   padding: 5%;
   background-color: white;
   opacity: 0.85;
+
 }
 
 .text {
@@ -181,13 +184,17 @@ html, body {
 }
 
 
+.selection{
+  display: block;
+}
+
 .checkmark {
   position: absolute;    
   font-family: arial;
   top: 0;
   left: 0;
   height: 100%;
-  width: 4%;
+  width: 5%;
   margin-right: 4%;
   background-color:lightsalmon;
 }
@@ -197,9 +204,11 @@ html, body {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 1%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 0%;
   cursor: pointer;
-  font-size: 1.9vw ;
+  font-size: 2.3vw ;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
