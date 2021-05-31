@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Groceries4U</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
+
+<body>
+    <div class="title text">
+        <h1>Groceries4U</h1>
+    </div>
+
+    <!-- IMPORTANT , this code was taken from Caroline Barriere Script for Lab 2:  https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery-->
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+        <button class="text tablinks" onclick="openInfo(event, 'Client')">Your Selection</button>
+        <button class="text tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button class="text tablinks" onclick="openInfo(event, 'Cart')">Your Cart</button>
+        <button class="text tablinks fontsize" onclick="toggleFontSize()">+ BIGGER TEXT +</button>
+    </div>
+
+    <div style="background-image: url('images/veggies.jpg');"  class="main-page">
+       
+        <!-- Tab content -->
+        <div id="Client" class="tabcontent">
+            <h3>Client Information</h3>
+            <p>Tell us a bit about you.</p>
+            Choose a Category:
+            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                <option value=""></option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="GlutenFree">GlutenFree</option>
+                <option value="Nut free / no nut traces">GlutenFree</option>
+                <option value="Organic">GlutenFree</option>
+                <option value="No Lactose ">GlutenFree</option>
+            </select>
+        </div>
+
+
+        <div class="main-page"></div>
+        <div id="Products" class="tabcontent">
+            <h3>Your targeted products</h3>
+            <p>We preselected products based on your restrictions.</p>
+            Choose items to buy:
+            <div id="displayProduct"></div>
+            <button id="addCart" type="button" class="block text" onclick="selectedItems()">
+                Add selected items to cart.
+            </button>
+        </div>
+
+        <div id="Cart" class="tabcontent">
+            <h3>Cart</h3>
+            <p class="text">Here is your cart.</p>
+            <div id="displayCart"></div>
+        </div>
+    </div>
+
+    <div class="footer_sep">
+    </div>
+    <div class="footer_top">
+    </div>
+</body>
+
+<footer>
+    <p class="footer_message text"> Designed by Gio6113 </p>
+    <p class="footer_date text"> May 19th 2021 </p>
+    <p class="footer_class text"> SEG3125 </p>
+</footer>
+
+</html>
